@@ -1,15 +1,12 @@
 from collections import Counter
 import csv
 
-
 def get_mean(total_weight, total_entries):
-    # Calculating Mean
     mean = total_weight / total_entries
     print(f"Mean (Average) is -> {mean:2f}")
 
 
 def get_median(total_entries, sorted_data):
-    # Calculating Median
     if total_entries % 2 == 0:
         median1 = float(sorted_data[total_entries//2])
         median2 = float(sorted_data[total_entries//2 - 1])
@@ -20,7 +17,6 @@ def get_median(total_entries, sorted_data):
 
 
 def get_mode(sorted_data):
-    # Calculating Mode
     data = Counter(sorted_data)
     mode_data_for_range = {
         "75-85": 0,
@@ -68,7 +64,6 @@ with open('HeightWeight.csv', newline='') as f:
     reader = csv.reader(f)
     file_data = list(reader)
 
-# To remove headers from CSV
 file_data.pop(0)
 
 total_weight = 0
